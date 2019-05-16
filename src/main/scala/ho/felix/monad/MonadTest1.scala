@@ -2,7 +2,7 @@ package ho.felix.monad
 import scala.language.higherKinds
 import cats._
 import implicits._
-import data._
+import cats.data._
 
 object MonadTest1 {
 
@@ -23,5 +23,6 @@ object MonadTest1 {
 
     println(first(5))
     println(second(5))
+
   }
 }
