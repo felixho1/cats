@@ -1,0 +1,20 @@
+http://eed3si9n.com/herding-cats/Writer.html
+
+scala> def logNumber(x: Int): Writer[List[String], Int] =
+         Writer(List("Got number: " + x.show), 3)
+logNumber: (x: Int)cats.data.Writer[List[String],Int]
+
+scala> def multWithLog: Writer[List[String], Int] =
+         for {
+           a <- logNumber(3)
+           b <- logNumber(5)
+         } yield a * b
+multWithLog: cats.data.Writer[List[String],Int]
+
+scala> multWithLog.run
+res2: cats.Id[(List[String], Int)] = (List(Got number: 3, Got number: 5),9)
+
+multWithLog.reset
+multWithLog.swap
+multWithLog.value = cats.Id[Int] = 9
+multWithLog.written = cats.Id[List[String]] = List(Got number: 3, Got number: 5)
