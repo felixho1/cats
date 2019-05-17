@@ -1,4 +1,6 @@
 http://eed3si9n.com/herding-cats/Writer.html
+https://www.slideshare.net/RaymondTay1/practical-cats
+https://www.meetup.com/Singapore-Scala-Programmers/events/240930589/
 
 scala> def logNumber(x: Int): Writer[List[String], Int] =
          Writer(List("Got number: " + x.show), 3)
